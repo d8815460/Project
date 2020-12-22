@@ -17,6 +17,7 @@
 		47C2AD302591D281007A77EE /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD2F2591D281007A77EE /* ProjectTests.swift */; };
 		47C2AD3B2591D281007A77EE /* ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD3A2591D281007A77EE /* ProjectUITests.swift */; };
 		47C2AD682591DC6D007A77EE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD672591DC6D007A77EE /* WebService.swift */; };
+		47C2AD6D2591DD3D007A77EE /* TopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD6C2591DD3D007A77EE /* TopService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		47C2AD3A2591D281007A77EE /* ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITests.swift; sourceTree = "<group>"; };
 		47C2AD3C2591D281007A77EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47C2AD672591DC6D007A77EE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		47C2AD6C2591DD3D007A77EE /* TopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopService.swift; sourceTree = "<group>"; };
 		ABAC173EE9BEF8B96C2185AD /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED10A2F8F9C148AE473F737C /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				47C2AD672591DC6D007A77EE /* WebService.swift */,
+				47C2AD6C2591DD3D007A77EE /* TopService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C2AD1D2591D280007A77EE /* ViewController.swift in Sources */,
+				47C2AD6D2591DD3D007A77EE /* TopService.swift in Sources */,
 				47C2AD192591D280007A77EE /* AppDelegate.swift in Sources */,
 				47C2AD682591DC6D007A77EE /* WebService.swift in Sources */,
 				47C2AD1B2591D280007A77EE /* SceneDelegate.swift in Sources */,
