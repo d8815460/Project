@@ -15,6 +15,9 @@ class TopRemoteDataSource: TopDataSource {
                 page: page,
                 subType: subType
             )
-        ).map { try JSONDecoder().decode(TopList.self, from: $0) }
+        ).map {
+            try JSONDecoder().decode(TopList.self, from: $0)
+            
+        }
     }
 }
