@@ -30,6 +30,7 @@
 		47C2ADAF259205AD007A77EE /* TopCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2ADAE259205AD007A77EE /* TopCellViewModel.swift */; };
 		47C2ADB425920CB5007A77EE /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2ADB325920CB5007A77EE /* UIImageView+Extensions.swift */; };
 		47C2ADBA25920D02007A77EE /* CachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2ADB925920D02007A77EE /* CachePolicy.swift */; };
+		47C2ADBF25921873007A77EE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2ADBE25921873007A77EE /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		47C2ADAE259205AD007A77EE /* TopCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCellViewModel.swift; sourceTree = "<group>"; };
 		47C2ADB325920CB5007A77EE /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		47C2ADB925920D02007A77EE /* CachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicy.swift; sourceTree = "<group>"; };
+		47C2ADBE25921873007A77EE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ABAC173EE9BEF8B96C2185AD /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED10A2F8F9C148AE473F737C /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				47C2AD822591E847007A77EE /* TopViewController.swift */,
+				47C2ADBE25921873007A77EE /* DetailViewController.swift */,
 			);
 			path = Controlers;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				47C2AD6D2591DD3D007A77EE /* TopService.swift in Sources */,
 				47C2ADAF259205AD007A77EE /* TopCellViewModel.swift in Sources */,
 				47C2AD192591D280007A77EE /* AppDelegate.swift in Sources */,
+				47C2ADBF25921873007A77EE /* DetailViewController.swift in Sources */,
 				47C2AD972591F2A9007A77EE /* TopRemoteDataSource.swift in Sources */,
 				47C2AD682591DC6D007A77EE /* WebService.swift in Sources */,
 				47C2AD832591E847007A77EE /* TopViewController.swift in Sources */,

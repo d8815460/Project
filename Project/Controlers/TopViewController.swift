@@ -61,12 +61,19 @@ class TopViewController: UIViewController {
 
     @IBAction func searchButtonPressed(_ sender: Any) {
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let viewController = segue.destination as? DetailViewController
+        viewController?.webUrl = sender as? String
+    }
 }
 
 extension TopViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.topList?.count ?? 0
+        return topList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,5 +89,11 @@ extension TopViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let topList = topList else { return }
+        let webUrl = topList[indexPath.item].url
+        self.performSegue(withIdentifier: "webview", sender: webUrl)
     }
 }
