@@ -45,15 +45,89 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="topCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topCell" rowHeight="134" id="3Bo-n4-Tgq">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="134"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TopCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopCell" rowHeight="180" id="3Bo-n4-Tgq" customClass="TopCell" customModule="Project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Bo-n4-Tgq" id="q27-MO-HLo">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AlH-cq-0Sl">
+                                                    <rect key="frame" x="20" y="11" width="126" height="158"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="126" id="leQ-AF-leH"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMo-ao-uk0">
+                                                    <rect key="frame" x="20" y="131" width="38" height="38"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="38" id="6o4-4U-9z7"/>
+                                                        <constraint firstAttribute="height" constant="38" id="JXd-to-Bnl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpb-Et-OXY">
+                                                    <rect key="frame" x="154" y="90" width="77.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IO0-ds-qdt">
+                                                    <rect key="frame" x="154" y="119" width="69.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-jY-Y90">
+                                                    <rect key="frame" x="154" y="148" width="37.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PDF-3g-MOO">
+                                                    <rect key="frame" x="154" y="11" width="240" height="71"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="71" id="wzE-Sy-qaA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AlH-cq-0Sl" firstAttribute="bottom" secondItem="q27-MO-HLo" secondAttribute="bottomMargin" id="Ae7-43-bOy"/>
+                                                <constraint firstItem="PDF-3g-MOO" firstAttribute="trailing" secondItem="q27-MO-HLo" secondAttribute="trailingMargin" id="C3G-1v-lb9"/>
+                                                <constraint firstItem="mMo-ao-uk0" firstAttribute="leading" secondItem="q27-MO-HLo" secondAttribute="leadingMargin" id="Cdf-Ix-CGK"/>
+                                                <constraint firstItem="moP-jY-Y90" firstAttribute="top" secondItem="IO0-ds-qdt" secondAttribute="bottom" constant="8.5" id="N6a-FT-Jl7"/>
+                                                <constraint firstItem="PDF-3g-MOO" firstAttribute="leading" secondItem="AlH-cq-0Sl" secondAttribute="trailing" constant="8" symbolic="YES" id="SUU-av-gdm"/>
+                                                <constraint firstItem="Tpb-Et-OXY" firstAttribute="top" secondItem="PDF-3g-MOO" secondAttribute="bottom" constant="8" symbolic="YES" id="Ybq-b7-EVI"/>
+                                                <constraint firstItem="mMo-ao-uk0" firstAttribute="bottom" secondItem="q27-MO-HLo" secondAttribute="bottomMargin" id="bP1-8Y-JPe"/>
+                                                <constraint firstItem="AlH-cq-0Sl" firstAttribute="top" secondItem="q27-MO-HLo" secondAttribute="topMargin" id="o9Y-zy-SHN"/>
+                                                <constraint firstItem="IO0-ds-qdt" firstAttribute="leading" secondItem="PDF-3g-MOO" secondAttribute="leading" id="qQq-B9-jpD"/>
+                                                <constraint firstItem="Tpb-Et-OXY" firstAttribute="leading" secondItem="PDF-3g-MOO" secondAttribute="leading" id="r1A-w4-9yP"/>
+                                                <constraint firstItem="AlH-cq-0Sl" firstAttribute="leading" secondItem="q27-MO-HLo" secondAttribute="leadingMargin" id="sxt-P2-DVD"/>
+                                                <constraint firstItem="IO0-ds-qdt" firstAttribute="top" secondItem="Tpb-Et-OXY" secondAttribute="bottom" constant="8.5" id="wpD-v1-Vub"/>
+                                                <constraint firstItem="PDF-3g-MOO" firstAttribute="top" secondItem="q27-MO-HLo" secondAttribute="topMargin" id="ywe-zd-yi0"/>
+                                                <constraint firstItem="moP-jY-Y90" firstAttribute="leading" secondItem="PDF-3g-MOO" secondAttribute="leading" id="zyf-ab-p1w"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="endDate" destination="IO0-ds-qdt" id="vEo-2i-bJS"/>
+                                            <outlet property="rank" destination="mMo-ao-uk0" id="rKO-li-quR"/>
+                                            <outlet property="startDate" destination="Tpb-Et-OXY" id="5Xm-E9-S6d"/>
+                                            <outlet property="title" destination="PDF-3g-MOO" id="oSx-Qj-iMe"/>
+                                            <outlet property="topImage" destination="AlH-cq-0Sl" id="DqX-ln-dFO"/>
+                                            <outlet property="type" destination="moP-jY-Y90" id="jov-Kc-lhl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3Gi-On-kgx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SKr-sr-evZ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -99,6 +173,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

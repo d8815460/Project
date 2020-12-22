@@ -16,6 +16,8 @@ class TopViewController: UIViewController {
 
     private var topList: [TopItem]?
 
+    private var cellHeight: CGFloat = 180
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class TopViewController: UIViewController {
                 onNext: { [weak self] (topList) in
                     guard let self = self else { return }
                     self.topList = topList.top
+                    self.tableView.reloadData()
                 },
                 onError: { (error) in
                     print("error: \(error)")
@@ -57,5 +60,27 @@ class TopViewController: UIViewController {
     }
 
     @IBAction func searchButtonPressed(_ sender: Any) {
+    }
+}
+
+extension TopViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.topList?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: TopCell.reuseId, for: indexPath) as? TopCell,
+            let topList = topList
+        else { return UITableViewCell() }
+        
+        let subViewModel = TopCellViewModel(topList[indexPath.item])
+        cell.bind(subViewModel)
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
     }
 }
