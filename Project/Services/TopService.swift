@@ -35,18 +35,4 @@ extension TopService: WebService {
             return HTTPHeaders([])
         }
     }
-
-//    var parameters: Parameters? {
-//        switch self {
-//        case .getTop(let type, let page, let subType):
-//            var parameters = ["type": type]
-//            if let page = page {
-//                parameters["page"] = String(page)
-//            }
-//            if let subType = subType {
-//                parameters["subType"] = subType
-//            }
-//            return parameters
-//        }
-//    }
 }
