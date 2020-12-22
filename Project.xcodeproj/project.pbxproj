@@ -18,6 +18,8 @@
 		47C2AD3B2591D281007A77EE /* ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD3A2591D281007A77EE /* ProjectUITests.swift */; };
 		47C2AD682591DC6D007A77EE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD672591DC6D007A77EE /* WebService.swift */; };
 		47C2AD6D2591DD3D007A77EE /* TopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD6C2591DD3D007A77EE /* TopService.swift */; };
+		47C2AD722591DF36007A77EE /* TopDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD712591DF36007A77EE /* TopDataSource.swift */; };
+		47C2AD792591DFC3007A77EE /* TopRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD782591DFC3007A77EE /* TopRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		47C2AD3C2591D281007A77EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47C2AD672591DC6D007A77EE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		47C2AD6C2591DD3D007A77EE /* TopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopService.swift; sourceTree = "<group>"; };
+		47C2AD712591DF36007A77EE /* TopDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDataSource.swift; sourceTree = "<group>"; };
+		47C2AD782591DFC3007A77EE /* TopRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRepository.swift; sourceTree = "<group>"; };
 		ABAC173EE9BEF8B96C2185AD /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED10A2F8F9C148AE473F737C /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +116,7 @@
 			children = (
 				47C2AD662591DB23007A77EE /* Services */,
 				47C2AD652591DB1C007A77EE /* DataSource */,
+				47C2AD762591DF99007A77EE /* Repositories */,
 				47C2AD642591DB12007A77EE /* Models */,
 				47C2AD632591DB0D007A77EE /* Views */,
 				47C2AD622591DB06007A77EE /* ViewModels */,
@@ -184,6 +189,7 @@
 		47C2AD652591DB1C007A77EE /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				47C2AD712591DF36007A77EE /* TopDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -195,6 +201,14 @@
 				47C2AD6C2591DD3D007A77EE /* TopService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		47C2AD762591DF99007A77EE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				47C2AD782591DFC3007A77EE /* TopRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		520F0CF749CFEF7916518BE2 /* Frameworks */ = {
@@ -388,6 +402,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C2AD722591DF36007A77EE /* TopDataSource.swift in Sources */,
+				47C2AD792591DFC3007A77EE /* TopRepository.swift in Sources */,
 				47C2AD1D2591D280007A77EE /* ViewController.swift in Sources */,
 				47C2AD6D2591DD3D007A77EE /* TopService.swift in Sources */,
 				47C2AD192591D280007A77EE /* AppDelegate.swift in Sources */,
