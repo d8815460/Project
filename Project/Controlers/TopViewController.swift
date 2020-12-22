@@ -87,6 +87,19 @@ extension TopViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        if viewModel.shouldLoadMoreTopList(at: indexPath.row) {
+            viewModel.loadMore()
+                .subscribe (onNext: { [weak self] topList in
+                    guard let self = self else { return }
+                    self.topList?.append(contentsOf: topList.top)
+                    self.tableView.reloadData()
+                })
+                .disposed(by: bag)
+        }
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
     }

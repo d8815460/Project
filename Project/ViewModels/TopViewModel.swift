@@ -22,6 +22,8 @@ class TopListViewModel {
 
     private let _finalCountsDown: Int = 20
 
+    private var _currentPage: Int = 1
+
     private let bag: DisposeBag = .init()
 
     var isCompletedToFetch: Observable<Bool> {
@@ -42,13 +44,19 @@ class TopListViewModel {
     }
 
     func loadData() -> Observable<TopList> {
-        self.topRepository.getTop(type: type, page: 1, subType: subType)
+        self.topRepository.getTop(type: type, page: _currentPage, subType: subType)
+            .do(onNext: { [weak self] topList in
+                guard let self = self else { return }
+                self.topList = topList
+                self._isCompletedToFetch.accept(true)
+            })
     }
 
     var numberOfWorks: Int { topList?.top.count ?? 0 }
 
     func loadMore() -> Observable<TopList> {
-        return topRepository.getTop(type: type, page: _pageLimitCount, subType: subType)
+        _currentPage += 1
+        return topRepository.getTop(type: type, page: _currentPage, subType: subType)
             .do(onNext: { [weak self] topList in
                 guard let self = self else { return }
                 if topList.top.count < self._pageLimitCount {
