@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		47C2AD252591D280007A77EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C2AD232591D280007A77EE /* LaunchScreen.storyboard */; };
 		47C2AD302591D281007A77EE /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD2F2591D281007A77EE /* ProjectTests.swift */; };
 		47C2AD3B2591D281007A77EE /* ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD3A2591D281007A77EE /* ProjectUITests.swift */; };
+		47C2AD682591DC6D007A77EE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD672591DC6D007A77EE /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		47C2AD362591D281007A77EE /* ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C2AD3A2591D281007A77EE /* ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUITests.swift; sourceTree = "<group>"; };
 		47C2AD3C2591D281007A77EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47C2AD672591DC6D007A77EE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		ABAC173EE9BEF8B96C2185AD /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED10A2F8F9C148AE473F737C /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,13 @@
 		47C2AD172591D280007A77EE /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				47C2AD662591DB23007A77EE /* Services */,
+				47C2AD652591DB1C007A77EE /* DataSource */,
+				47C2AD642591DB12007A77EE /* Models */,
+				47C2AD632591DB0D007A77EE /* Views */,
+				47C2AD622591DB06007A77EE /* ViewModels */,
+				47C2AD602591DAEB007A77EE /* Controlers */,
+				47C2AD612591DAF9007A77EE /* Storyboards */,
 				47C2AD182591D280007A77EE /* AppDelegate.swift */,
 				47C2AD1A2591D280007A77EE /* SceneDelegate.swift */,
 				47C2AD1C2591D280007A77EE /* ViewController.swift */,
@@ -135,6 +144,56 @@
 			path = ProjectUITests;
 			sourceTree = "<group>";
 		};
+		47C2AD602591DAEB007A77EE /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controlers;
+			sourceTree = "<group>";
+		};
+		47C2AD612591DAF9007A77EE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		47C2AD622591DB06007A77EE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		47C2AD632591DB0D007A77EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47C2AD642591DB12007A77EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47C2AD652591DB1C007A77EE /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		47C2AD662591DB23007A77EE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				47C2AD672591DC6D007A77EE /* WebService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		520F0CF749CFEF7916518BE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +208,6 @@
 				ED10A2F8F9C148AE473F737C /* Pods-Project.debug.xcconfig */,
 				ABAC173EE9BEF8B96C2185AD /* Pods-Project.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -329,6 +387,7 @@
 			files = (
 				47C2AD1D2591D280007A77EE /* ViewController.swift in Sources */,
 				47C2AD192591D280007A77EE /* AppDelegate.swift in Sources */,
+				47C2AD682591DC6D007A77EE /* WebService.swift in Sources */,
 				47C2AD1B2591D280007A77EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
