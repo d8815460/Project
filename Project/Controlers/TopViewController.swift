@@ -16,7 +16,7 @@ class TopViewController: UIViewController {
 
     private var topList: [TopItem]?
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,7 @@ class TopViewController: UIViewController {
         viewModel?.isCompletedToFetch
             .subscribe(onNext: { (isCompletedToFetch) in
                 // update UI
+                self.tableView.reloadData()
             })
             .disposed(by: bag)
     }

@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,42 +41,36 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bQy-Mf-oOM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JAG-Z2-gcs">
                                 <rect key="frame" x="0.0" y="88" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6JW-7q-UiM">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="topCell" reuseIdentifier="topCell" id="smC-WL-7x2">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" insetsLayoutMarginsFromSafeArea="NO" id="Zna-7p-eAj">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="topCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topCell" rowHeight="134" id="3Bo-n4-Tgq">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="134"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Bo-n4-Tgq" id="q27-MO-HLo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JAG-Z2-gcs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1wZ-DM-B9w"/>
                             <constraint firstItem="egC-yU-bXr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4Ws-Hv-xib"/>
-                            <constraint firstItem="bQy-Mf-oOM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5RU-W4-prh"/>
                             <constraint firstItem="egC-yU-bXr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9p2-4n-2qP"/>
-                            <constraint firstItem="bQy-Mf-oOM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XAh-CV-aar"/>
+                            <constraint firstItem="egC-yU-bXr" firstAttribute="top" secondItem="JAG-Z2-gcs" secondAttribute="bottom" id="OgW-aR-quK"/>
+                            <constraint firstItem="JAG-Z2-gcs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a6o-bU-sn8"/>
                             <constraint firstItem="egC-yU-bXr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hvy-df-qYJ"/>
-                            <constraint firstItem="bQy-Mf-oOM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rfT-oH-9ej"/>
-                            <constraint firstItem="egC-yU-bXr" firstAttribute="top" secondItem="bQy-Mf-oOM" secondAttribute="bottom" id="tmm-0f-ZsN"/>
+                            <constraint firstItem="JAG-Z2-gcs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iZ0-2f-Dsr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Please chose Type and SubType" id="NoM-a3-Ubd"/>
                     <connections>
-                        <outlet property="collectionView" destination="bQy-Mf-oOM" id="Fft-5y-xVY"/>
+                        <outlet property="tableView" destination="JAG-Z2-gcs" id="7Q3-mm-tnB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
