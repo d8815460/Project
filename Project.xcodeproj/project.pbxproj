@@ -22,6 +22,7 @@
 		47C2AD792591DFC3007A77EE /* TopRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD782591DFC3007A77EE /* TopRepository.swift */; };
 		47C2AD7E2591E0B3007A77EE /* Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD7D2591E0B3007A77EE /* Top.swift */; };
 		47C2AD832591E847007A77EE /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD822591E847007A77EE /* TopViewController.swift */; };
+		47C2AD8B2591E973007A77EE /* TopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C2AD8A2591E973007A77EE /* TopViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		47C2AD782591DFC3007A77EE /* TopRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRepository.swift; sourceTree = "<group>"; };
 		47C2AD7D2591E0B3007A77EE /* Top.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top.swift; sourceTree = "<group>"; };
 		47C2AD822591E847007A77EE /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		47C2AD8A2591E973007A77EE /* TopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewModel.swift; sourceTree = "<group>"; };
 		ABAC173EE9BEF8B96C2185AD /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED10A2F8F9C148AE473F737C /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 		47C2AD622591DB06007A77EE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				47C2AD8A2591E973007A77EE /* TopViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			files = (
 				47C2AD722591DF36007A77EE /* TopDataSource.swift in Sources */,
 				47C2AD792591DFC3007A77EE /* TopRepository.swift in Sources */,
+				47C2AD8B2591E973007A77EE /* TopViewModel.swift in Sources */,
 				47C2AD1D2591D280007A77EE /* ViewController.swift in Sources */,
 				47C2AD6D2591DD3D007A77EE /* TopService.swift in Sources */,
 				47C2AD192591D280007A77EE /* AppDelegate.swift in Sources */,
