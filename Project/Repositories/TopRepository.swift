@@ -8,7 +8,7 @@
 import RxSwift
 
 protocol TopRepo {
-    func getTop(type: String, page: Int, subType: String) -> Observable<Void>
+    func getTop(type: String, page: Int, subType: String) -> Observable<TopList>
 }
 
 class TopRepository {
@@ -20,7 +20,7 @@ class TopRepository {
 }
 
 extension TopRepository: TopRepo {
-    func getTop(type: String, page: Int, subType: String) -> Observable<Void> {
+    func getTop(type: String, page: Int, subType: String) -> Observable<TopList> {
         dataSource.getTop(type: type, page: page, subType: subType)
     }
 }
