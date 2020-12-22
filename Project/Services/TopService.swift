@@ -8,14 +8,18 @@
 import Alamofire
 
 enum TopService {
-    case getTop(type: String, page: Int, subType: String)
+    case getTop(type: String, page: Int?, subType: String?)
 }
 
 extension TopService: WebService {
 
     var path: String {
         switch self {
-        case .getTop: return "/v3/top"
+        case .getTop(let type, let page, let subType):
+            guard let subType = subType else {
+                return "/v3/top/\(type)/\(page ?? 1)"
+            }
+            return "/v3/top/\(type)/\(page ?? 1)/\(subType)"
         }
     }
 
@@ -31,14 +35,18 @@ extension TopService: WebService {
             return HTTPHeaders([])
         }
     }
-    var parameters: Parameters? {
-        switch self {
-        case .getTop(let type, let page, let subType):
-            return [
-                "type": type,
-                "page": page,
-                "subType": subType
-            ]
-        }
-    }
+
+//    var parameters: Parameters? {
+//        switch self {
+//        case .getTop(let type, let page, let subType):
+//            var parameters = ["type": type]
+//            if let page = page {
+//                parameters["page"] = String(page)
+//            }
+//            if let subType = subType {
+//                parameters["subType"] = subType
+//            }
+//            return parameters
+//        }
+//    }
 }

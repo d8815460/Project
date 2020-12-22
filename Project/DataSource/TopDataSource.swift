@@ -8,5 +8,5 @@
 import RxSwift
 
 protocol TopDataSource {
-    func getTop(type: String, page: Int, subType: String) -> Observable<TopList>
+    func getTop(type: String, page: Int?, subType: String?) -> Observable<TopList>
 }

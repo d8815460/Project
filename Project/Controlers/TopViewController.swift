@@ -6,17 +6,49 @@
 //
 
 import UIKit
+import RxSwift
 
 class TopViewController: UIViewController {
+
+    private var viewModel: TopListViewModel?
+
+    private let bag: DisposeBag = .init()
+
+    private var topList: [TopItem]?
 
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRx()
+        fetchTop()
+    }
 
-        // Do any additional setup after loading the view.
+    func fetchTop() {
+        let dataSource = TopRemoteDataSource()
+        let repository = TopRepository(dataSource: dataSource)
+        viewModel = TopListViewModel(topRepository: repository, type: "anime", page: 1, subType: "upcoming")
+        viewModel?.loadData()
+            .subscribe(
+                onNext: { [weak self] (topList) in
+                    guard let self = self else { return }
+                    self.topList = topList.top
+                },
+                onError: { (error) in
+                    print("error: \(error)")
+                }
+            )
+            .disposed(by: bag)
     }
     
+    func setupRx() {
+        viewModel?.isCompletedToFetch
+            .subscribe(onNext: { (isCompletedToFetch) in
+                // update UI
+            })
+            .disposed(by: bag)
+    }
+
     @IBAction func typeButtonPressed(_ sender: Any) {
     }
     
@@ -25,14 +57,4 @@ class TopViewController: UIViewController {
 
     @IBAction func searchButtonPressed(_ sender: Any) {
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

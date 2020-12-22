@@ -38,9 +38,9 @@ struct TopItem {
     let url: String
     let imageUrl: String
     let type: String
-    let episodes: Int
-    let startDate: String
-    let endDate: String
+    let episodes: Int?
+    let startDate: String?
+    let endDate: String?
     let members: Int
     let score: Int
 }
@@ -58,6 +58,20 @@ extension TopItem: Decodable {
         case endDate = "end_date"
         case members
         case score
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.malId = try container.decode(Int.self, forKey: .malId)
+        self.rank = try container.decode(Int.self, forKey: .rank)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.url = try container.decode(String.self, forKey: .url)
+        self.imageUrl = try container.decode(String.self, forKey: .imageUrl)
+        self.type = try container.decode(String.self, forKey: .type)
+        self.episodes = try container.decode(Int?.self, forKey: .episodes)
+        self.startDate = try container.decode(String?.self, forKey: .startDate)
+        self.endDate = try container.decode(String?.self, forKey: .endDate)
+        self.members = try container.decode(Int.self, forKey: .members)
+        self.score = try container.decode(Int.self, forKey: .score)
     }
 }
 

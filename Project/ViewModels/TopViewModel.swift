@@ -27,7 +27,11 @@ class TopListViewModel {
     var isCompletedToFetch: Observable<Bool> {
         _isCompletedToFetch.asObservable()
     }
-    
+
+    var tops: [TopItem]? {
+        return topList?.top
+    }
+
     let type: String
     let subType: String
 
@@ -37,24 +41,8 @@ class TopListViewModel {
         self.subType = subType
     }
 
-    func loadData() -> Observable<Void> {
-        self.topRepository
-            .getTop(type: type, page: 1, subType: subType)
-            .do(onNext: { [weak self] (topList) in
-                guard let self = self else { return }
-                self.topList = topList
-                self._isCompletedToFetch.accept(true)
-                if topList.top.count < self._pageLimitCount {
-                    self._isEnd = true
-                }
-            }, onError: { [weak self] error in
-                guard let self = self else { return }
-                print("get top list error \(error) for \(self.type) and \(self.subType)")
-            })
-            .catch({ (error) -> Observable<TopList> in
-                return .error(error)
-            })
-            .map { _ in () }
+    func loadData() -> Observable<TopList> {
+        self.topRepository.getTop(type: type, page: 1, subType: subType)
     }
 
     var numberOfWorks: Int { topList?.top.count ?? 0 }
@@ -71,7 +59,7 @@ class TopListViewModel {
             })
     }
 
-    func shouldLoadMoreNormalRanking(at currentItem: Int) -> Bool {
+    func shouldLoadMoreTopList(at currentItem: Int) -> Bool {
         if _isEnd { return false }
         return currentItem == (self.numberOfWorks - 1) - _finalCountsDown
     }
