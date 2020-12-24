@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8LI-LS-bDZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8LI-LS-bDZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -70,6 +71,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yK5-dg-jT2">
+                                                    <rect key="frame" x="20" y="11" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="AEl-Ge-gvX"/>
+                                                        <constraint firstAttribute="height" constant="40" id="jnk-9H-Z1h"/>
+                                                    </constraints>
+                                                    <state key="normal" image="icon_home_like_before40x40"/>
+                                                    <state key="selected" image="icon_home_like_after40x40"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtnPressed:" destination="3Bo-n4-Tgq" eventType="touchUpInside" id="79b-aH-WJN"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AlH-cq-0Sl" firstAttribute="bottom" secondItem="q27-MO-HLo" secondAttribute="bottomMargin" id="Ae7-43-bOy"/>
@@ -83,6 +96,8 @@
                                                 <constraint firstItem="mMo-ao-uk0" firstAttribute="bottom" secondItem="q27-MO-HLo" secondAttribute="bottomMargin" id="bP1-8Y-JPe"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tpb-Et-OXY" secondAttribute="trailing" constant="20" symbolic="YES" id="baW-Yf-ujb"/>
                                                 <constraint firstItem="IO0-ds-qdt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mMo-ao-uk0" secondAttribute="trailing" constant="8" symbolic="YES" id="k5a-DO-7ak"/>
+                                                <constraint firstItem="yK5-dg-jT2" firstAttribute="leading" secondItem="q27-MO-HLo" secondAttribute="leadingMargin" id="lzK-9R-146"/>
+                                                <constraint firstItem="yK5-dg-jT2" firstAttribute="top" secondItem="q27-MO-HLo" secondAttribute="topMargin" id="o4F-rW-APl"/>
                                                 <constraint firstItem="AlH-cq-0Sl" firstAttribute="top" secondItem="q27-MO-HLo" secondAttribute="topMargin" id="o9Y-zy-SHN"/>
                                                 <constraint firstItem="IO0-ds-qdt" firstAttribute="leading" secondItem="PDF-3g-MOO" secondAttribute="leading" id="qQq-B9-jpD"/>
                                                 <constraint firstItem="Tpb-Et-OXY" firstAttribute="leading" secondItem="PDF-3g-MOO" secondAttribute="leading" id="r1A-w4-9yP"/>
@@ -94,6 +109,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="endDate" destination="IO0-ds-qdt" id="vEo-2i-bJS"/>
+                                            <outlet property="favoriteButton" destination="yK5-dg-jT2" id="b5D-gv-VmN"/>
                                             <outlet property="rank" destination="mMo-ao-uk0" id="rKO-li-quR"/>
                                             <outlet property="startDate" destination="Tpb-Et-OXY" id="5Xm-E9-S6d"/>
                                             <outlet property="title" destination="PDF-3g-MOO" id="oSx-Qj-iMe"/>
@@ -342,6 +358,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_home_like_after40x40" width="40" height="40"/>
+        <image name="icon_home_like_before40x40" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

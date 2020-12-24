@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct TopList {
     let requestHash: String
@@ -43,6 +44,7 @@ struct TopItem {
     let endDate: String?
     let members: Int
     let score: Int
+    let isFavorite: Bool?
 }
 
 extension TopItem: Decodable {
@@ -58,6 +60,7 @@ extension TopItem: Decodable {
         case endDate = "end_date"
         case members
         case score
+        case isFavorite
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -72,7 +75,26 @@ extension TopItem: Decodable {
         self.endDate = try container.decode(String?.self, forKey: .endDate)
         self.members = try container.decode(Int.self, forKey: .members)
         self.score = try container.decode(Int.self, forKey: .score)
+        self.isFavorite = (try? container.decode(Bool.self, forKey: .isFavorite)) ?? false
     }
 }
 
 extension TopItem: Equatable { }
+
+class TopItemObject: Object {
+    @objc dynamic var malId: Int = 0
+    @objc dynamic var rank: Int = 0
+    @objc dynamic var title: String = ""
+    @objc dynamic var url: String = ""
+    @objc dynamic var imageUrl: String = ""
+    @objc dynamic var type: String = ""
+    dynamic var episodes: Int? = nil
+    @objc dynamic var startDate: String? = nil
+    @objc dynamic var endDate: String? = nil
+    @objc dynamic var members: Int = 0
+    @objc dynamic var score: Int = 0
+    dynamic var isFavorite: Bool? = nil
+    override static func primaryKey() -> String? {
+        return "malId"
+    }
+}

@@ -26,6 +26,8 @@ class TopListViewModel {
 
     private let bag: DisposeBag = .init()
 
+    private var subViewModels: [TopCellViewModel] = []
+
     var isCompletedToFetch: Observable<Bool> {
         _isCompletedToFetch.asObservable()
     }
@@ -63,6 +65,9 @@ class TopListViewModel {
                     self._isEnd = true
                 }
                 self.topList?.top.append(contentsOf: topList.top)
+                for topItem in topList.top {
+                    self.subViewModels.append(TopCellViewModel(topItem))
+                }
                 self._isCompletedToFetch.accept(true)
             })
     }
@@ -70,5 +75,9 @@ class TopListViewModel {
     func shouldLoadMoreTopList(at currentItem: Int) -> Bool {
         if _isEnd { return false }
         return currentItem == (self.numberOfWorks - 1) - _finalCountsDown
+    }
+
+    func cellViewModel(at indexPath: IndexPath) -> TopCellViewModel {
+        return self.subViewModels[indexPath.item]
     }
 }
