@@ -88,12 +88,12 @@ class TopItemObject: Object {
     @objc dynamic var url: String = ""
     @objc dynamic var imageUrl: String = ""
     @objc dynamic var type: String = ""
-    dynamic var episodes: Int? = nil
+    @objc dynamic var episodes: Int = 0
     @objc dynamic var startDate: String? = nil
     @objc dynamic var endDate: String? = nil
     @objc dynamic var members: Int = 0
     @objc dynamic var score: Int = 0
-    dynamic var isFavorite: Bool? = nil
+    @objc dynamic var isFavorite: Bool = false
     override static func primaryKey() -> String? {
         return "malId"
     }

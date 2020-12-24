@@ -78,7 +78,7 @@ struct TopCellViewModel {
         let realm = try? Realm()
         if let topItemObject = topItemObject {
             try! realm?.write {
-                topItemObject.isFavorite = self._isFavorite
+                topItemObject.isFavorite = _isFavorite
             }
         } else {
             let topItemObject = TopItemObject()
@@ -88,12 +88,12 @@ struct TopCellViewModel {
             topItemObject.url = _model.url
             topItemObject.imageUrl = _model.imageUrl
             topItemObject.type = _model.type
-            topItemObject.episodes = _model.episodes
+            topItemObject.episodes = _model.episodes ?? 0
             topItemObject.startDate = _model.startDate
             topItemObject.endDate = _model.endDate
             topItemObject.members = _model.members
             topItemObject.score = _model.score
-            topItemObject.isFavorite = self._isFavorite
+            topItemObject.isFavorite = _isFavorite
             try! realm?.write {
                 realm?.add(topItemObject)
             }
