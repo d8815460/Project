@@ -16,6 +16,11 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (9.1.0)
   - OHHTTPStubs/Swift (9.1.0):
     - OHHTTPStubs/Default
+  - Realm (10.5.0):
+    - Realm/Headers (= 10.5.0)
+  - Realm/Headers (10.5.0)
+  - RealmSwift (10.5.0):
+    - Realm (= 10.5.0)
   - RxCocoa (6.0.0-rc.2):
     - RxRelay (= 6.0.0-rc.2)
     - RxSwift (= 6.0.0-rc.2)
@@ -27,6 +32,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Kingfisher
   - OHHTTPStubs/Swift
+  - RealmSwift
   - RxCocoa (= 6.0.0-rc.2)
   - RxSwift (= 6.0.0-rc.2)
 
@@ -35,6 +41,8 @@ SPEC REPOS:
     - Alamofire
     - Kingfisher
     - OHHTTPStubs
+    - Realm
+    - RealmSwift
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -43,10 +51,12 @@ SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
+  Realm: e1c22c3d83b229afb70ebc10e1771c91e9542d12
+  RealmSwift: 6fc078d9d3fd7e58c71bfdbb694e252462f112a5
   RxCocoa: 38445a25751be5907f52f7ea02c137f52ce2e7f2
   RxRelay: b9e2483e83f46e4e7bf1234c6fe418e5c2eaf825
   RxSwift: ada35be6643bedf6881cdbd6bbfb27aeea527670
 
-PODFILE CHECKSUM: c0e9d450021b76ef47bf866699c1d4c098c41755
+PODFILE CHECKSUM: cf50bf446be782ecb04bd25c6a652c901af8d628
 
 COCOAPODS: 1.10.0

@@ -9,6 +9,7 @@ target 'Project' do
   pod 'RxCocoa', '6.0.0-rc.2'
 	pod 'Alamofire', '~> 5.2'
 	pod 'Kingfisher'
+  pod 'RealmSwift'
   
   target 'ProjectTests' do
       #Add pod here if you want the access of pod in Tests target.
