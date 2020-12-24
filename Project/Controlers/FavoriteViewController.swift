@@ -25,7 +25,6 @@ class FavoriteViewController: UIViewController {
         let realm = try? Realm()
 
         objects = realm?.objects(TopItemObject.self).filter("isFavorite = 1")
-        print("objects = \(objects)")
         tableView.reloadData()
     }
 
