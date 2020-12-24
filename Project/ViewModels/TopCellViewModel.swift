@@ -17,7 +17,7 @@ enum FavoriteState {
 
 struct TopCellViewModel {
     private let _model: TopItem
-    private var _isFavorite: Bool
+    private var _isFavorite: Bool = false
     private let _favoriteState: BehaviorRelay<FavoriteState> = .init(value: .unlike)
     private var topItemObject: TopItemObject?
 
@@ -26,8 +26,9 @@ struct TopCellViewModel {
         let realm = try? Realm()
         if let topItem = realm?.objects(TopItemObject.self).filter("malId = \(model.malId)").first {
             topItemObject = topItem
+            self._isFavorite = topItemObject?.isFavorite ?? false
         }
-        self._isFavorite = _model.isFavorite ?? false
+        
         if self._isFavorite {
             self._favoriteState.accept(.like)
         } else {
@@ -64,7 +65,7 @@ struct TopCellViewModel {
     var isFavorite: Bool? { _model.isFavorite }
 
     mutating func toggleFavoriteButton() {
-        self._isFavorite.toggle()
+        _isFavorite = !_isFavorite
         if self._isFavorite {
             self._favoriteState.accept(.like)
         } else {
@@ -73,7 +74,7 @@ struct TopCellViewModel {
         self.saveToLocalDB()
     }
 
-    mutating func saveToLocalDB() {
+    func saveToLocalDB() {
         let realm = try? Realm()
         if let topItemObject = topItemObject {
             try! realm?.write {
