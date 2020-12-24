@@ -7,25 +7,33 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
 
 class FavoriteViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
-    private var objects: Results<TopItemObject>?
+    
+    private var viewModel = FavoriteViewModel()
     private var cellHeight: CGFloat = 180
+    private let bag: DisposeBag = .init()
+    private var objects: [TopCellViewModel]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let realm = try? Realm()
-
-        objects = realm?.objects(TopItemObject.self).filter("isFavorite = 1")
-        tableView.reloadData()
+        viewModel.loadData()
+            .subscribe(onNext: { [weak self] subViewModels in
+                guard let self = self else { return }
+                self.objects = subViewModels
+                self.tableView.reloadData()
+            })
+            .disposed(by: bag)
     }
 
     /*
@@ -43,7 +51,7 @@ class FavoriteViewController: UIViewController {
 extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects?.count ?? 0
+        return viewModel.itemsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,22 +59,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: TopCell.reuseId, for: indexPath) as? TopCell,
             let objects = objects
         else { return UITableViewCell() }
-        let model = TopItem(
-            malId: objects[indexPath.item].malId,
-            rank: objects[indexPath.item].rank,
-            title: objects[indexPath.item].title,
-            url: objects[indexPath.item].url,
-            imageUrl: objects[indexPath.item].imageUrl,
-            type: objects[indexPath.item].type,
-            episodes: objects[indexPath.item].episodes,
-            startDate: objects[indexPath.item].startDate,
-            endDate: objects[indexPath.item].endDate,
-            members: objects[indexPath.item].members,
-            score: objects[indexPath.item].score,
-            isFavorite: objects[indexPath.item].isFavorite
-        )
-        let subViewModel = TopCellViewModel(model)
-        cell.bind(subViewModel)
+        cell.bind(objects[indexPath.item])
         return cell
     }
 
